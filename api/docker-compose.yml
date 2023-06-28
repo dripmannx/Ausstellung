@@ -1,0 +1,22 @@
+version: "3"
+services:
+  api:
+    build: ./api        
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./api:/api
+    command: bash -c "python manage.py runserver 0.0.0.0:8000"
+    networks:
+      - web_net
+  web:
+    build: ./frontend_t
+    ports:
+      - "5173:5173"
+    volumes:
+      - ./frontend_t:/frontend_t
+    networks:
+      - web_net
+networks:
+  web_net:
+    name: web_net

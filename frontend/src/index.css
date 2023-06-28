@@ -1,0 +1,62 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@layer base {
+  .text-applied {
+    @apply text-light-text dark:text-dark-text-base dark:hover:text-dark-text-hover;
+  }
+}
+.transition-animation:hover {
+  @apply translate-y-[-2px];
+}
+
+.scrollbarContainer::-webkit-scrollbar{
+  width: 10px;
+
+}
+.scrollbarContainer::-webkit-scrollbar-track{
+  background-color: #1f1f1f;
+}
+.scrollbarContainer::-webkit-scrollbar-thumb{
+  border-radius: 4px;
+  background-color: #424242;
+}
+/* [1] The container */
+.img-hover-zoom {
+   /* [1.1] Set it as per your need */
+  overflow: hidden; /* [1.2] Hide the overflowing of child elements */
+}
+
+/* [2] Transition property for smooth transformation of images */
+.img-hover-zoom img {
+  transition: transform .5s ease;
+}
+
+/* [3] Finally, transforming the image when container gets hovered */
+.img-hover-zoom:hover img {
+  transform: scale(1.2);
+}
+.mirror{-webkit-transform: scaleX(-1);
+  transform: scaleX(-1);}
+.background-immage::before{
+  background-image: url(../src/Images/Background_Landing.jpeg) ;
+  background-attachment: fixed;
+  content: "";
+  background-size: cover;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  opacity: 40%;
+
+}
+body{
+  background-image: linear-gradient( rgba(0, 0, 0, 0.2), rgba(0, 0, 0,0.2 ) ),url(../src/Images/Background.png) ;
+  background-attachment: fixed;
+ 
+  background-size: cover;
+ 
+
+
+}
