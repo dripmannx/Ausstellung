@@ -10,11 +10,11 @@ services:
     networks:
       - web_net
   web:
-    build: ./frontend_t
+    build: ./frontend
     ports:
       - "5173:5173"
     volumes:
-      - ./frontend_t:/frontend_t
+      - ./frontend:/frontend
     networks:
       - web_net
 networks:
